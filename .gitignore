@@ -1,3 +1,16 @@
-dataset/*.jpg
-dataset/*.png
+# 编辑器配置
+.vscode/
+.idea/
+
+# Python 缓存
 __pycache__/
+*.pyc
+*.pyo
+
+# 数据集（保留占位符，但不上传测试图片）
+dataset/*
+!dataset/.gitkeep
+
+# 虚拟环境
+.conda/
+venv/
