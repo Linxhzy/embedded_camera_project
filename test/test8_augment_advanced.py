@@ -3,7 +3,7 @@ import pyroomacoustics as pra
 import librosa
 import soundfile as sf
 import os
-audio_file="dataset/test_audio.wav"
+audio_file="dataset/raw/test_audio.wav"
 y,sr =librosa.load(audio_file,sr=16000)
 room_dim = [8,6,3]#房间 长8宽6高3
 rt60 = 0.6#混响时间
@@ -22,7 +22,7 @@ noise_power = signal_power / (10 ** (target_snr / 10))# 根据 SNR 计算需要�
 noise = np.random.randn(len(reverb_audio)) * np.sqrt(noise_power)# 随机生成符合能量的高斯白噪声
 final_audio = reverb_audio + noise# 最终音频 = 混响音频 + 噪声
 # 保存结果
-output_file = "dataset/augmented_audio.wav"
+output_file = "dataset/raw/augmented_audio.wav"
 sf.write(output_file, final_audio, sr)
 print(f"混响及噪声添加完成已保存至: {output_file}")
 

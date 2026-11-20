@@ -25,7 +25,7 @@ def record_audio():
     stream.stop_stream()
     stream.close()
     p.terminate()
-    filename = "dataset/test_audio.wav"
+    filename = "dataset/raw/test_audio.wav"
     wf = wave.open(filename,'wb')
     wf.setnchannels(CHANNELS)
     wf.setsampwidth(p.get_sample_size(FORMAT))
