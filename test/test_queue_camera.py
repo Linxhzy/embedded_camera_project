@@ -10,7 +10,7 @@ sys.path.insert(0, project_root)
 # 导入抓拍模块
 from src.camera_module import CameraCapture
 task_queue = queue.Queue()
-camera = CameraCapture(save_dir="dataset")
+camera = CameraCapture(save_dir="dataset/images")
 #消费者
 def camera_worker():
     print("[抓拍线程]:启动...")

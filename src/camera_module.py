@@ -2,11 +2,11 @@ import cv2
 import os
 import time
 class CameraCapture:
-    def __init__(self,save_dir="dataset",camera_id=0):
+    def __init__(self,save_dir="dataset/images",camera_id=0):
         self.save_dir = save_dir
         self.camera_id = camera_id
         if not os.path.exists(self.save_dir):
-            os.makedirs(self.save_dir)
+            os.makedirs(self.save_dir,exit_ok=True)
             print(f"[初始化]创建保存目录：{self.save_dir}")
     def capture_single_image(self):
         #单次拍照并保存
