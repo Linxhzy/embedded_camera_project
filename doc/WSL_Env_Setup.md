@@ -70,11 +70,14 @@ sudo guvcview
 ### 4.1 编译步骤
 具体参考CSDN博客
 1. 下载微软官方 WSL2 内核源码（本项目基于 6.18.58.1 版本）。
+```bash
+   uname -r#内核版本
+```
 2. 复制官方配置模板：
 
-   ```bash
+```bash
    cp Microsoft/config-wsl .config
-   ```
+```
 
 3. 运行 `make menuconfig`，勾选以下核心驱动：
    - `Device Drivers` → `Multimedia support` → `Filter media drivers`（按 `Y`）
@@ -84,7 +87,9 @@ sudo guvcview
 4. 编译内核：
 
    ```bash
-   sudo make -j$(nproc)
+   sudo make -j$(nproc) KCONFIG_CONFIG=.config \
+   && sudo make modules_install -j$(nproc) \
+   && sudo make install -j$(nproc)
    ```
 
 5. 将生成的镜像复制到 Windows 目录：
@@ -162,7 +167,7 @@ sudo apt install libxcb-cursor0 -y
 - `dataset/`：存放抓拍图像及录音数据（已在 `.gitignore` 中忽略实际文件，仅保留 `.gitkeep` 占位）。
 - `doc/`：存放文档（即本文档）。
 
-## 7. 提交文档
+## 7. 上传Git仓库
 
 上传git仓库
 
