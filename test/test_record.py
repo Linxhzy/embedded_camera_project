@@ -7,6 +7,7 @@ FORMAT = pyaudio.paInt16#16位整数
 CHANNELS = 1#单声道
 RATE=16000#采样率
 RECORD_SECONDS = 5#5秒
+Filename = "dataset/raw/test_audio2.wav"
 def record_audio():
     p = pyaudio.PyAudio()
     #打开麦克风
@@ -25,7 +26,7 @@ def record_audio():
     stream.stop_stream()
     stream.close()
     p.terminate()
-    filename = "dataset/raw/test_audio.wav"
+    filename = Filename
     wf = wave.open(filename,'wb')
     wf.setnchannels(CHANNELS)
     wf.setsampwidth(p.get_sample_size(FORMAT))
