@@ -14,3 +14,6 @@ dataset/*
 # 虚拟环境
 .conda/
 venv/
+#
+dataset/images/*.jpg
+dataset/voiceprint_db.npz

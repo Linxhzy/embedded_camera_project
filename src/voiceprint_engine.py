@@ -6,7 +6,7 @@ import numpy as np
 from numpy.linalg import norm
 import os
 class VoiceprintEngine:
-    def __init__(self,sr=16000,n_mfcc=13,threshold=0.75):
+    def __init__(self,sr=16000,n_mfcc=13,threshold=0.75,db_path="dataset/voiceprint_db.npz"):
         #sr: 采样率
         #n_mfcc: MFCC 特征维度
         #threshold: 判定为同一个人的相似度阈值（0~1之间，越大越严格）
@@ -15,17 +15,35 @@ class VoiceprintEngine:
         self.threshold = threshold
         #特征库
         self.feature_database={}
+        self.db_path = db_path
+        self.load_database()#自动加载特征库
     def extract_feature(self,audio_path):
         y,_ = librosa.load(audio_path,sr=self.sr)
         mfcc = librosa.feature.mfcc(y=y,sr=self.sr,n_mfcc=self.n_mfcc)
         mean_mfcc = np.mean(mfcc,axis=1)
         return mean_mfcc
+    def save_database(self):
+        if not os.path.exists(os.path.dirname(self.db_path)):
+            os.makedirs(os.path.dirname(self.db_path))
+        #字典保存为numpy压缩格式
+        np.savez(self.db_path,**self.feature_database)
+        print(f"特征库保存至{self.db_path}")
+    def load_database(self):
+        if os.path.exists(self.db_path):
+            data=np.load(self.db_path)#转为字典
+            self.feature_database={}
+            for k in data.files:
+                self.feature_database[k] = data[k]
+            print(f"特征库从{self.db_path}加载{len(self.feature_database)}个声纹")
+        else:
+            print("特征库未找到本地存档")
     def register(self,name,audio_path):
         #声纹注册
         try:
             feature = self.extract_feature(audio_path)
             self.feature_database[name] = feature
             print(f"[注册成功] {name} 的声纹已录入特征库。")
+            self.save_database()
             return True
         except Exception as e:
             print(f"[注册失败] {name}: {e}")

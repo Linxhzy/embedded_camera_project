@@ -16,7 +16,7 @@ if __name__ == "__main__":
     unknown_audio = "dataset/raw/test_audio2.wav" 
     
     print("开始声纹注册")
-    engine.register("HOST", target_audio)
+    engine.register("aaa", target_audio)
     print("声纹识别")
     is_match, name, score = engine.identify(unknown_audio)
     print(f"识别结果:")
