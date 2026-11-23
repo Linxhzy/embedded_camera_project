@@ -1,3 +1,6 @@
+'''
+基于opencv的抓拍模块
+'''
 import cv2
 import os
 import time

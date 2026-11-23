@@ -1,3 +1,6 @@
+'''
+调用scr/voiceprint_engine.py模拟声音录入->利用余弦相似度对两个声音进行比对
+'''
 import sys
 import os
 

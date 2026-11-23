@@ -1,3 +1,6 @@
+'''
+校验文件内路径可用性
+'''
 import os
 def check_and_fix_paths():
     ok = True

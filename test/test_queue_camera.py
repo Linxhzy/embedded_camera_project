@@ -1,3 +1,6 @@
+'''
+利用queue实现多线程抓拍
+'''
 import os
 import sys
 import time

@@ -1,3 +1,6 @@
+'''
+MFCC特征提取
+'''
 import librosa
 import librosa.display
 import matplotlib.pylab as plt

@@ -1,3 +1,6 @@
+'''
+调用麦克风录制5秒的音频并保存到dataset/raw/
+'''
 import pyaudio
 import wave
 import os

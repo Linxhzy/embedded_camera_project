@@ -1,3 +1,6 @@
+'''
+MFCC特征提取->注册声纹特征库->余弦相似度比对
+'''
 import librosa
 import numpy as np
 from numpy.linalg import norm

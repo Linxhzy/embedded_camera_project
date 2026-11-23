@@ -1,3 +1,6 @@
+'''
+音频预处理
+'''
 import librosa
 import numpy as np
 class AudioPreprocessor:
@@ -14,7 +17,8 @@ class AudioPreprocessor:
                 y_final = y_trimmed[:target_length]#从头开始
             else:
                 padding = target_length-len(y_trimmed)
-                y_final = np.pad(y_trimmed,(0,padding),'constant')#np.pad(0,a)是前面补0个，后面补a个，constant是常数，默认补0
+                y_final = np.pad(y_trimmed,(0,padding),'constant')
+                #np.pad(0,a)是前面补0个，后面补a个，constant是常数，默认补0
             return y_final
         except Exception as e:
             print("[预处理失败]{file_path}:{e}")

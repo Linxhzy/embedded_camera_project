@@ -1,3 +1,6 @@
+'''
+基于pyroomacoustics的叠加房间混响和高斯噪声
+'''
 import numpy as np
 import pyroomacoustics as pra
 import librosa
