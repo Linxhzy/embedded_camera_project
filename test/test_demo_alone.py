@@ -20,7 +20,7 @@ def test_camera_demo():
 def test_voiceprint_demo():
     print("声纹识别demo")
     engine = VoiceprintEngine(threshold=0.75)
-    audio_path = "dataset/raw/test_audio.wav"
+    audio_path = "dataset/raw/host_01.wav"
     engine.register("aaa",audio_path)
     is_target,name,score=engine.identify(audio_path)
     if is_target is True:

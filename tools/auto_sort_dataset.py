@@ -2,7 +2,7 @@ import os
 import shutil
 def auto_sort_dataset():
     raw_dir = "dataset/raw"
-    target_base_dir = "dataset/sorted"
+    target_base_dir = "dataset/important"
     if not os.path.exists(raw_dir):
         print(f"找不到{raw_dir}")
         return

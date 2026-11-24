@@ -8,6 +8,7 @@ def check_and_fix_paths():
     required_dirs=["dataset",
                    "dataset/raw",
                    "dataset/images",
+                   "dataset/important",
                    "src",
                    "test",
                    "doc"]
@@ -22,10 +23,16 @@ def check_and_fix_paths():
     # 2. 检查核心代码文件是否存在（防止误删或重命名）
     required_files = [
         "src/camera_module.py",
-        "test/test_record.py",
+        "src/audio_preprocessor.py",
+        "src/voiceprint_engine.py",
         "test/test_augment_advanced.py",
+        "test/test_check_paths.py",
+        "test/test_demo_alone.py",
+        "test/test_engine.py",
         "test/test_lib.py",
-        "test/test_queue_camera.py"
+        "test/test_mfcc.py",
+        "test/test_queue_camera.py",
+        "test/test_record.py"   
     ]
 
     for f in required_files:

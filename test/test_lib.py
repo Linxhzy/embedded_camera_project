@@ -5,7 +5,7 @@ import librosa
 import librosa.display
 import numpy as np
 import matplotlib.pylab as plt
-Audio_File = "dataset/raw/test_audio.wav"
+Audio_File = "dataset/raw/host_01.wav"
 # 设置中文字体（WSL Ubuntu 默认一般有文泉驿或 Noto Sans CJK）
 plt.rcParams['font.sans-serif'] = ['WenQuanYi Micro Hei', 'Noto Sans CJK JP', 'SimHei', 'Microsoft YaHei']
 # 解决负号 '-' 显示为方块的问题

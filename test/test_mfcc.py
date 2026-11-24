@@ -5,6 +5,7 @@ import librosa
 import librosa.display
 import matplotlib.pylab as plt
 import numpy as np
+Audio_File = "dataset/raw/host_01.wav"
 plt.rcParams['font.sans-serif'] = ['WenQuanYi Micro Hei', 'SimHei']
 plt.rcParams['axes.unicode_minus'] = False
 class AudioFeatureExtractor:
@@ -39,7 +40,7 @@ class AudioFeatureExtractor:
 if __name__ == "__main__":
     extractor = AudioFeatureExtractor()
     #提取特征
-    audio_file = "dataset/raw/test_audio.wav"
+    audio_file = Audio_File
     mfcc_features, y_raw = extractor.extract_mfcc(audio_file)
     
     if mfcc_features is not None:

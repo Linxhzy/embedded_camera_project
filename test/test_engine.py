@@ -12,8 +12,8 @@ from src.voiceprint_engine import VoiceprintEngine
 
 if __name__ == "__main__":
     engine = VoiceprintEngine()#实例化
-    target_audio = "dataset/raw/test_audio.wav"
-    unknown_audio = "dataset/raw/test_audio2.wav" 
+    target_audio = "dataset/important/noise/noise_dog_bark_01.wav"
+    unknown_audio = "dataset/important/noise/noise_flute_01.wav" 
     
     print("开始声纹注册")
     engine.register("aaa", target_audio)

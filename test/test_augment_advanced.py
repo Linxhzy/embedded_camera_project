@@ -6,7 +6,7 @@ import pyroomacoustics as pra
 import librosa
 import soundfile as sf
 import os
-audio_file="dataset/raw/test_audio.wav"
+audio_file="dataset/raw/host_01.wav"
 y,sr =librosa.load(audio_file,sr=16000)
 room_dim = [8,6,3]#房间 长8宽6高3
 rt60 = 0.6#混响时间

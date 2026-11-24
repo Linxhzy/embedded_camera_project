@@ -6,7 +6,7 @@ import numpy as np
 from numpy.linalg import norm
 import os
 class VoiceprintEngine:
-    def __init__(self,sr=16000,n_mfcc=13,threshold=0.75,db_path="dataset/voiceprint_db.npz"):
+    def __init__(self,sr=16000,n_mfcc=13,threshold=1.0,db_path="dataset/voiceprint_db.npz"):
         #sr: 采样率
         #n_mfcc: MFCC 特征维度
         #threshold: 判定为同一个人的相似度阈值（0~1之间，越大越严格）

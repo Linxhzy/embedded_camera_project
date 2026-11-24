@@ -17,3 +17,17 @@ venv/
 #
 dataset/images/*.jpg
 dataset/voiceprint_db.npz
+# 忽略数据集真实音频与图片
+dataset/raw/*.wav
+dataset/images/*.jpg
+dataset/important/
+dataset/train/
+dataset/val/
+
+# 忽略生成的特征库
+dataset/voiceprint_db.npz
+
+# 忽略 Python 缓存
+__pycache__/
+*.pyc
+.vscode/
